@@ -19,14 +19,14 @@ public class File {
     private String ext;
 
     @Column
-    private float size;
+    private double size;
 
     @ManyToOne
     @JoinColumn(name = "folder_id", nullable = false)
     @JsonIgnoreProperties("files")
     private Folder folder;
 
-    public File(String name, String ext, float size, Folder folder) {
+    public File(String name, String ext, double size, Folder folder) {
         this.name = name;
         this.ext = ext;
         this.size = size;
@@ -60,7 +60,7 @@ public class File {
         this.ext = ext;
     }
 
-    public float getSize() {
+    public double getSize() {
         return size;
     }
 
